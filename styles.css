@@ -81,6 +81,7 @@ label:hover{
 .tags-area{
   padding:15px;
   background-color: lightgreen;
+  border-radius:10px;
 }
 
 li{
