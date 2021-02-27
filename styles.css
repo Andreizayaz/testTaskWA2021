@@ -4,7 +4,7 @@
   padding:0;
 }
 
-body, .container, .input-form, .input-and-save-block{
+body, .container, .input-form, .input-and-save-block, .tag-item, .btn-delete{
   display:flex;
 }
 
@@ -15,8 +15,8 @@ body{
   width: 100vw;
   font-family: 'Roboto',
   sans-serif;
-  font-size: 16px;
-  background-color: aqua;
+  font-size: 18px;
+  background-color: #0FF;
 }
 
 .container{
@@ -48,6 +48,7 @@ body{
   padding:5px;
   font-size: 18px;
   border:none;
+  border-radius: 5px;
 }
 
 button{  
@@ -58,10 +59,11 @@ button{
 
 .btn-save{ 
   padding:5px 20px;
-  color:white;
+  color:#FFF;
   font-size: 18px;
   border-radius: 10px;
-  background-color: lightgreen;
+  background-color: #90EE90;
+  transition:background-color 1s;
 }
 
 .btn-save:hover{
@@ -70,17 +72,24 @@ button{
 
 .readonly-switch-block{
   padding:5px;
-  color:white;
-  font-size: 18px;
+  color:#FFF;
+}
+
+label{
+  color:#FFF;
+  font-weight: normal;
+  transition: all 1s;
+  cursor:pointer;
 }
 
 label:hover{
-  color: #A5C451;
+  color: #BA4E3B;
+  font-weight: bold;
 }
 
 .tags-area{
   padding:15px;
-  background-color: lightgreen;
+  background-color: #90EE90;
   border-radius:10px;
 }
 
@@ -88,12 +97,11 @@ li{
   list-style: none;
 }
 
-.tag-item{
-  display: flex;
+.tag-item{  
   justify-content: center;
   margin-bottom: 10px;
   padding:10px;
-  background-color: white;
+  background-color: #FFF;
   border-radius: 10px;
 }
 
@@ -104,25 +112,53 @@ li{
 .tag-text{
   margin-right: auto;
   width:80%;
-  font-size: 18px;
 }
 
 .btn-delete{
-  display: flex;
   align-items: center;
   justify-content: center;
   width:20px;
   height:20px;
   border:1px solid #83A2C4;
   border-radius: 50%;
+  transition: all 1s;
+}
+
+.btn-delete:hover{
+  transform: rotate(180deg);
 }
 
 .btn-delete-icon{
   max-width: 70%;
 }
 
-@media(max-width:500px) {
+@media(max-width:520px) {
   .container {
     width: 100%;
+  }
+
+  .input-form{
+    flex-direction: column;
+  }
+
+  .input-and-save-block{
+    justify-content: center;
+    margin: 0 auto;
+    width: 95%;
+  }
+
+  .btn-save{
+    padding: 5px 10px;
+  }
+
+  .readonly-switch-block{
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .tags-area{
+    width: 95%;
+    margin: 0 auto;
   }
 }
